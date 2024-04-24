@@ -1,9 +1,7 @@
-# Para criar o executável é preciso passar os temmplates
-# pyinstaller --onefile --add-data 'templates/*;datacompy/templates/' main.py --noconsole
 
 
 import sys
-from design_comparador import *
+from design import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 from os.path import expanduser
 import datacompy
@@ -23,10 +21,6 @@ class Novo(QMainWindow, Ui_MainWindow):
         self.home = expanduser('~')
 
     def exec_comp(self, df1, df2, campos):
-
-        print(f'DF1: {df1}')
-        print(f'DF2: {df2}')
-
         df_1 = read_csv(df1[0])
         df_2 = read_csv(df2[0])
 
@@ -45,7 +39,6 @@ class Novo(QMainWindow, Ui_MainWindow):
             self.home,
             'CSV (*.csv)'
         )[0]
-        print(self.file_1)
         for file in self.file_1:
             self.listWidget_file_1.addItem(file)
 
@@ -57,7 +50,6 @@ class Novo(QMainWindow, Ui_MainWindow):
             self.home,
             'CSV (*.csv)'
         )[0]
-        print(self.file_2)
         for file in self.file_2:
             self.listWidget_file_2.addItem(file)
 
