@@ -1,7 +1,7 @@
 
 
 import sys
-from design_comparador import *
+from design import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 from os.path import expanduser
 import datacompy
